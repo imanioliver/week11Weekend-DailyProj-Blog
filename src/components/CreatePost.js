@@ -88,10 +88,6 @@ export default class CreatePost extends Component{
               </div>
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>
-<p>
-            {this.state.authorName}
-            {this.state.blogTitle}
-            {this.state.blogEntry}</p>
             </div>
         )
     }

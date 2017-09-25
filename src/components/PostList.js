@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default class PostList extends Component{
@@ -28,12 +28,14 @@ export default class PostList extends Component{
                 let entries = data.map((entry, index) =>{
 
                         let lottaColors = ["#C08497", "#F7AF9D", "#F7E3AF", "#F3EEC3", "#D4E6B5", "#A3B9C9", "#598392", "#124559", "#FFC914", "#17BEBB", "#E4572E"];
-                        let randomColor=  lottaColors[Math.floor(Math.random()*(lottaColors.length+1))];
+                        let randomNumber = Math.floor(Math.random()*(lottaColors.length));
+                        let randomColor=  lottaColors[randomNumber];
                         let cardStyle= {
                             "color":"white",
                             "backgroundColor":randomColor
                         }
-
+                        console.log("Color: ", randomColor);
+                        console.log("Number: ", randomNumber);
 
                     return (
 
