@@ -73,15 +73,15 @@ export default class CreatePost extends Component{
             <form onSubmit={this.submitEntry}>
               <div className="form-group">
                 <label htmlFor="formGroupExampleInput">Author's Name</label>
-                <input onChange={this.handleNameChange} type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input"/>
+                <input onChange={this.handleNameChange} type="text" className="form-control" id="formGroupExampleInput" value={this.state.authorName} placeholder="Example input"/>
               </div>
               <div className="form-group">
                 <label htmlFor="formGroupExampleInput2">Title</label>
-                <input onChange={this.handleTitleChange} type="text" className="form-control" id="formGroupExampleInput2" placeholder="Another input"/>
+                <input onChange={this.handleTitleChange} type="text" className="form-control" id="formGroupExampleInput2" value={this.state.blogTitle} placeholder="Another input"/>
               </div>
               <div className="form-group">
                 <label htmlFor="exampleTextarea">Write your blog...</label>
-                <textarea onChange={this.handleEntry} className="form-control" id="exampleTextarea" rows="3"></textarea>
+                <textarea onChange={this.handleEntry} className="form-control" id="exampleTextarea" rows="3" placeholder="Your post" value={this.state.blogEntry} ></textarea>
               </div>
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+
 
 export default class PostList extends Component{
 
@@ -6,9 +8,7 @@ export default class PostList extends Component{
             super();
 
             this.state= {
-                "authorName":"",
-                "blogTitle":"",
-                "blogEntry":"",
+
                 entries:[]
 
 
@@ -22,34 +22,49 @@ export default class PostList extends Component{
             .then(results => {
                 return results.json();
             })
-            // .then(stuff=>{
-            //     console.log("the data: ", stuff);
-            // })
+
             .then(data => {
+                let match = this.props.match;
                 let entries = data.map((entry, index) =>{
+
+                        let lottaColors = ["#C08497", "#F7AF9D", "#F7E3AF", "#F3EEC3", "#D4E6B5", "#A3B9C9", "#598392", "#124559", "#FFC914", "#17BEBB", "#E4572E"];
+                        let randomColor=  lottaColors[Math.floor(Math.random()*(lottaColors.length+1))];
+                        let cardStyle= {
+                            "color":"white",
+                            "backgroundColor":randomColor
+                        }
+
+
                     return (
-                        <div class="card">
-                          <div class="card-block">
-                            <h4 class="card-title">Title: {entry.blogTitle}</h4>
-                            <p class="card-text">By <strong>{entry.authorName}</strong></p>
+
+                        <div key={index +1} className="card" style={cardStyle}>
+                          <div className="card-block">
+
+                          Title: <NavLink activeClassName="selected" className="navlink" to={`${match.url}/${entry.blogTitle}`}>
+                                <h4 className="card-title"> {entry.blogTitle}</h4>
+                          </NavLink>
+                            <p className="card-text">By <strong>{entry.authorName}</strong></p>
                           </div>
-                          <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                          </ul>
+                          <div className="card-block">
+                            <blockquote className="card-blockquote">
+                              <p>{entry.blogEntry}</p>
+
+                            </blockquote>
+                          </div>
 
                         </div>
                     )
                  })
+                 this.setState({entries: entries});
             });
-            this.setState({entries: entries});
         }
     render(){
+
         return(
             <div>
-            {this.state.entries}
 
+            {this.state.entries}
+            <Link className="btn btn-large btn-primary" to="/">Back To Home</Link>
             </div>
 
         )
