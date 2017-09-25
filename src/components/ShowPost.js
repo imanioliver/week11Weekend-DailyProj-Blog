@@ -4,17 +4,24 @@ import { Link } from 'react-router-dom';
 
 export default class ShowPost extends Component{
 
-
+    constructor(){
+        super()
+        this.state= {
+            post:{}
+        }
+    }
 
         componentDidMount(){
 
 
             let match = this.props.match;
-            const { id } = this.props.match.params;
+            const { id } = this.props.match.params.id;
             const URL = `https://tiny-lasagna-server.herokuapp.com/collections/blogger/${id}`;
 
+            this.setState({
 
-            console.log(id);
+            })
+            console.log({id});
 
             fetch(URL)
             .then(results => {
@@ -26,31 +33,6 @@ export default class ShowPost extends Component{
             .then(data => {
 
                 // const {postTitle} = this.props.match.params;
-
-                let allPosts = data.map((post) =>{
-
-                    if (post._id === id) {
-
-                    return (
-
-                        <div key={post._id} className="card">
-                          <div className="card-block">
-
-                          Title: <h4 className="card-title"> {post.blogTitle}</h4>
-                            <p className="card-text">By <strong>{post.authorName}</strong></p>
-                          </div>
-                          <div className="card-block">
-                            <blockquote className="card-blockquote">
-                              <p>{post.blogEntry}</p>
-
-                            </blockquote>
-                          </div>
-
-                        </div>
-                    )
-                }
-            })
-
             })
             .catch(err=>{
                 console.log("errorrrr fetching.");
@@ -59,6 +41,10 @@ export default class ShowPost extends Component{
         render(){
             return(
                 <div>
+                {this.state.post.blogTitle}
+                {this.state.post.blo}
+                {this.state.post.blogTitle}
+
 
                 </div>
 

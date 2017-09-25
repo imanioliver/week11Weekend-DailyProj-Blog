@@ -40,9 +40,9 @@ export default class PostList extends Component{
                         <div key={index +1} className="card" style={cardStyle}>
                           <div className="card-block">
 
-                          Title: <NavLink activeClassName="selected" className="navlink" to={`${match.url}/${entry.blogTitle}`}>
+                          Title: <Link activeClassName="selected" className="navlink" to={`${match.url}/${entry._id}`}>
                                 <h4 className="card-title"> {entry.blogTitle}</h4>
-                          </NavLink>
+                          </Link>
                             <p className="card-text">By <strong>{entry.authorName}</strong></p>
                           </div>
                           <div className="card-block">

@@ -60,6 +60,9 @@ export default class CreatePost extends Component{
         )
         .then(response=> {
         console.log("it is fetching")})
+        .then(data=>{
+            this.props.history.push('/show')
+        })
         .catch(err=>{
             console.log("error fetching data");
         })
