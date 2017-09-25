@@ -8,5 +8,22 @@ nav {
     top: 0px;
     margin-bottom:0;
     background-color: #B3D2B2;
-    /*z-index: -5;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.navlink{
+        margin: 10px;
+
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+    padding-top: 5%;
 }

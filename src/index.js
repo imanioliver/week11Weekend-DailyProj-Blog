@@ -9,7 +9,7 @@ import BaseLayout from './components/BaseLayout.js'
 import CreatePost from './components/CreatePost.js'
 import PostList from './components/PostList.js'
 import ShowPost from './components/ShowPost.js'
-
+import Home from './components/Home'
 
 
 ReactDOM.render(
@@ -18,9 +18,10 @@ ReactDOM.render(
     <BrowserRouter>
         <BaseLayout>
             <Switch>
-                <Route exact path="/" component={PostList}/>
+                <Route exact path="/" component={Home}/>
                 <Route path="/create" component={CreatePost}/>
-                <Route path="/show" component={ShowPost}/>
+                <Route path="/show" component={PostList}/>
+                <Route path="/show/:post" component={ShowPost}/>
             </Switch>
         </BaseLayout>
     </BrowserRouter>

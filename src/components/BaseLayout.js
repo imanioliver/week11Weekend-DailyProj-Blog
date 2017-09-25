@@ -8,6 +8,7 @@ export default class BaseLayout extends Component{
             <div>
 
                 <NavBar/>
+                {this.props.children}
 
             </div>
 

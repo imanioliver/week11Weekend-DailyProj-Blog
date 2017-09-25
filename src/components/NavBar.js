@@ -9,13 +9,13 @@ export default class NavBar extends Component{
             <nav>
                 <ul className="nav">
                   <li className="nav-item">
-                    <NavLink className="nav-link active" to="/"> Mani-Script</NavLink>
+                    <NavLink activeClassName="selected" className="navlink" to="/"> Mani-Script</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/create">Create a New Post</NavLink>
+                    <NavLink activeClassName="selected" className="navlink" to="/create">Create a New Post</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/show">Show Post</NavLink>
+                    <NavLink activeClassName="selected" className="navlink" to="/show">Show Post</NavLink>
                   </li>
                 </ul>
 
