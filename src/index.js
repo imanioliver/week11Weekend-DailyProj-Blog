@@ -5,6 +5,11 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './components/App';
 
+import BaseLayout from './components/BaseLayout.js'
+import CreatePost from './components/CreatePost.js'
+import PostList from './components/PostList.js'
+import ShowPost from './components/ShowPost.js'
+
 
 
 ReactDOM.render(

@@ -7,8 +7,7 @@ export default class BaseLayout extends Component{
         return(
             <div>
 
-                N
-
+                <NavBar/>
 
             </div>
 
